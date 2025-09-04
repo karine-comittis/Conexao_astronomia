@@ -1,0 +1,116 @@
+/* === NAVBAR (alterações anteriores) === */
+.navbar-custom {
+    padding: 0.8rem 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar-brand img {
+    width: 60px;
+    transition: all 0.3s ease;
+}
+
+.site-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #FFA500;
+}
+
+.nav-link {
+    padding: 0.5rem 1rem !important;
+    font-size: 1.05rem;
+}
+
+.nav-link i {
+    font-size: 1.2rem;
+    margin-right: 8px;
+}
+
+/* === HERO SECTION (novo) === */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('universo_fundo.jpg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 80vh;
+    min-height: 600px;
+    padding-top: 80px; /* Compensa navbar fixa */
+    display: flex;
+    align-items: center;
+}
+
+/* === CARDS (novo) === */
+.card {
+    transition: all 0.3s ease;
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+/* === RESPONSIVIDADE === */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 60vh;
+        text-align: center;
+    }
+    .site-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* Barra de pesquisa desktop */
+.navbar .form-control {
+    background-color: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.2);
+    color: white;
+}
+
+/* Placeholder branco */
+.navbar .form-control::placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
+/* Ícone de pesquisa mobile */
+.navbar .nav-link[data-bs-toggle="collapse"] {
+    padding: 8px 12px;
+}
+
+/* Estilos para as matérias */
+.materia-card {
+    transition: all 0.3s ease;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.materia-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Seção Quem Somos */
+.quem-somos {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    
+}
+
+
+    .img-quem-somos {
+    max-width: 350px; /* limite que você quer */
+    width: 100%;      /* ocupa até o limite */
+    height: auto;     /* mantém proporção */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    display: block;
+    margin: 0 auto;   /* centraliza */
+}
+
+

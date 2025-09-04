@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conexão Astronomia</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="logo.png.png" alt="Logo" width="60" class="me-2">
+                <span class="site-title">CONEXÃO ASTRONOMIA</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-journal-text"></i> Matérias</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-lightbulb"></i> Você Sabia?</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-calendar-check"></i> Agendamentos</a></li>
+                </ul>
+
+                <!-- Barra de Pesquisa Desktop -->
+                <form class="d-none d-lg-flex ms-auto" style="width: 250px;">
+                    <input class="form-control form-control-sm" type="search" placeholder="Pesquisar...">
+                    <button class="btn btn-sm btn-outline-light ms-2" type="submit">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </form>
+
+                <!-- Ícone Pesquisa Mobile -->
+                <div class="d-lg-none ms-2">
+                    <a href="#" class="nav-link" data-bs-toggle="collapse" data-bs-target="#searchMobile">
+                        <i class="bi bi-search fs-5"></i>
+                    </a>
+                    <div class="collapse" id="searchMobile">
+                        <input class="form-control form-control-sm mt-2" type="search" placeholder="Digite aqui...">
+                    </div>
+                </div>
+
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-envelope"></i> Contato</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-question-circle"></i> Ajuda</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Seção Hero -->
+    <section class="hero-section">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-3 fw-bold mb-4">Explore o Universo</h1>
+                    <p class="lead mb-5">Descubra os segredos do cosmos com nossos conteúdos exclusivos</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="btn btn-primary btn-lg px-4">Acessar Conteúdos</a>
+                        <a href="#" class="btn btn-outline-light btn-lg px-4">Explorar <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ <section class="comunidade py-5" id="comunidade">
+        <div class="container">
+            <h2 class="text-center display-4 fw-bold mb-5">Astronomia na Comunidade</h2>
+            
+            <div class="row g-4">
+                <!-- Card 1 -->
+                <div class="col-md-4">
+                    <div class="comunidade-card h-100 p-4 rounded-3 bg-dark">
+                        <i class="bi bi-people-fill fs-1 text-primary mb-3"></i>
+                        <h3>Eventos Locais</h3>
+                        <p>Participe de nossas observações astronômicas abertas ao público.</p>
+                        <a href="#" class="btn btn-sm btn-outline-light">Calendário</a>
+                    </div>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="col-md-4">
+                    <div class="comunidade-card h-100 p-4 rounded-3 bg-dark">
+                        <i class="bi bi-book fs-1 text-warning mb-3"></i>
+                        <h3>Projetos Escolares</h3>
+                        <p>Leve astronomia para escolas da sua região.</p>
+                        <a href="#" class="btn btn-sm btn-outline-light">Saiba como</a>
+                    </div>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="col-md-4">
+                    <div class="comunidade-card h-100 p-4 rounded-3 bg-dark">
+                        <i class="bi bi-camera-fill fs-1 text-info mb-3"></i>
+                        <h3>Concurso de Fotos</h3>
+                        <p>Envie suas melhores fotos astronômicas.</p>
+                        <a href="#" class="btn btn-sm btn-outline-light">Participar</a>
+                    </div>
+                </div>
+            </div>
+   
+
+    <!-- Seção de Matérias -->
+    <section class="container py-5 mt-4" id="materias">
+        <h2 class="text-center mb-5 display-4 fw-bold">Nossas Matérias</h2>
+        
+        <div class="row g-4">
+            <!-- Matéria 1 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card materia-card h-100">
+                    <img src="buraco_negro.jpg" class="card-img-top" alt="Buracos Negros">
+                    <div class="card-body">
+                        <span class="badge bg-primary mb-2">Astrofísica</span>
+                        <h3 class="h4">Buracos Negros</h3>
+                        <p>Explore os mistérios dos gigantes cósmicos que desafiam as leis da física.</p>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <a href="#" class="btn btn-sm btn-outline-primary">Ler Matéria</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Matéria 2 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card materia-card h-100">
+                    <img src="artemis.webp" class="card-img-top" alt="Missão Artemis">
+                    <div class="card-body">
+                        <span class="badge bg-success mb-2">Exploração</span>
+                        <h3 class="h4">Missão Artemis</h3>
+                        <p>O retorno da humanidade à Lua e os preparativos para Marte.</p>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <a href="#" class="btn btn-sm btn-outline-primary">Ler Matéria</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Matéria 3 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card materia-card h-100">
+                    <img src="expansao.avif" class="card-img-top" alt="Expansão do Universo">
+                    <div class="card-body">
+                        <span class="badge bg-warning text-dark mb-2">Cosmologia</span>
+                        <h3 class="h4">A Expansão do Universo</h3>
+                        <p>Como a energia escura está acelerando a expansão cósmica.</p>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <a href="#" class="btn btn-sm btn-outline-primary">Ler Matéria</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5">
+            <a href="#" class="btn btn-primary btn-lg">Ver Todas as Matérias</a>
+        </div>
+    </section>
+         
+    <!-- Seção Quem Somos -->
+    <section class="quem-somos py-5 bg-light" id="sobre">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="logo_qsm.png" alt="Nossa Equipe" class="img-quem-somos img-fluid">
+
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="display-5 fw-bold mb-4">Quem Somos</h2>
+                    <p class="lead">A <strong>Conexão Astronomia</strong> nasceu da paixão por desvendar os mistérios do cosmos e compartilhar esse conhecimento de forma acessível.</p>
+                    <p>Nossa equipe é composta por astrônomos, físicos e comunicadores científicos dedicados a trazer as últimas descobertas do universo para você.</p>
+                    <div class="mt-4">
+                        <a href="#" class="btn btn-outline-dark me-2">Nossa Missão</a>
+                        <a href="#" class="btn btn-primary">Contate-nos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
