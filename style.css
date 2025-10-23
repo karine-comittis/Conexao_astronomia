@@ -205,3 +205,88 @@ footer a:hover {
         max-width: 200px;
     }
 }
+
+/* === PÁGINA VOCÊ SABIA === */
+.page-header {
+    padding-top: 100px;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('universo_fundo.jpg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    margin-bottom: 0;
+}
+
+.curiosidades {
+    background-color: #f8f9fa;
+}
+
+.curiosidade-card {
+    transition: all 0.3s ease;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border-top: 4px solid transparent;
+}
+
+.curiosidade-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    border-top: 4px solid #0d6efd;
+}
+
+.curiosidade-icon {
+    transition: transform 0.3s ease;
+}
+
+.curiosidade-card:hover .curiosidade-icon {
+    transform: scale(1.1);
+}
+
+/* Cores personalizadas para ícones */
+.text-purple {
+    color: #6f42c1 !important;
+}
+
+/* Seção de Fatos Rápidos */
+.fatos-rapidos {
+    border-top: 1px solid #dee2e6;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.fato-numero {
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.fato-texto {
+    font-size: 0.9rem;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+/* Newsletter */
+.newsletter {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Footer */
+footer a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #FFA500 !important;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .page-header {
+        padding-top: 80px;
+    }
+
+    .fato-numero {
+        font-size: 2.5rem;
+    }
+}

@@ -4,55 +4,361 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agenda | Conexão Astronomia</title>
+    <title>Você Sabia? - Conexão Astronomia</title>
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- CSS Personalizado -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top navbar-custom">
         <div class="container-fluid">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
                 <img src="logo.png.png" alt="Logo" width="60" class="me-2">
                 <span class="site-title">CONEXÃO ASTRONOMIA</span>
             </a>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link" href="materias.html"><i class="bi bi-journal-text"></i>
-                            Matérias</a></li>
-                    <li class="nav-item"><a class="nav-link" href="voce-sabia.html"><i class="bi bi-lightbulb"></i> Você
-                            Sabia?</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="agenda.html"><i
-                                class="bi bi-calendar-check"></i> Agendamentos</a></li>
+                            Matérias</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link active" href="voce_sabia.html"><i
+                                class="bi bi-lightbulb"></i> Você
+                            Sabia?</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="agenda.html"><i class="bi bi-calendar-check"></i>
+                            Agendamentos</a></li>
+                </ul>
+
+                <!-- Barra de Pesquisa Desktop -->
+                <form class="d-none d-lg-flex ms-auto" style="width: 250px;">
+                    <input class="form-control form-control-sm" type="search" placeholder="Pesquisar...">
+                    <button class="btn btn-sm btn-outline-light ms-2" type="submit">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </form>
+
+                <!-- Ícone Pesquisa Mobile -->
+                <div class="d-lg-none ms-2">
+                    <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#searchMobile">
+                        <i class="bi bi-search fs-5"></i>
+                    </a>
+                    <div class="collapse" id="searchMobile">
+                        <input class="form-control form-control-sm mt-2" type="search" placeholder="Digite aqui...">
+                    </div>
+                </div>
+
+                <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="contato.html"><i class="bi bi-envelope"></i>
                             Contato</a></li>
                     <li class="nav-item"><a class="nav-link" href="ajuda.html"><i class="bi bi-question-circle"></i>
-                            Ajuda</a></li>
+                            Ajuda</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section class="container py-5 mt-5">
-        <h1 class="display-4 fw-bold text-center mb-5">Agenda Astronômica</h1>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item"><i class="bi bi-moon-stars"></i> 25/10 – Eclipse parcial da Lua visível no
-                Brasil.</li>
-            <li class="list-group-item"><i class="bi bi-sun"></i> 04/11 – Observação solar segura com telescópios
-                especiais.</li>
-            <li class="list-group-item"><i class="bi bi-rocket-takeoff"></i> 10/11 – Lançamento da missão Orion II.</li>
-        </ul>
+    <!-- Header da Página -->
+    <section class="page-header py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="display-4 fw-bold mb-4">Você Sabia?</h1>
+                    <p class="lead">Curiosidades fascinantes sobre o universo que vão surpreender você!</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <footer class="text-center py-4 bg-dark text-light mt-5">
-        <p class="mb-0">&copy; 2025 Conexão Astronomia — Todos os direitos reservados.</p>
+    <!-- Seção de Curiosidades -->
+    <section class="curiosidades py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Curiosidade 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="curiosidade-card card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="curiosidade-icon mb-3">
+                                <i class="bi bi-sun fs-1 text-warning"></i>
+                            </div>
+                            <h3 class="h5">Sol Gigante</h3>
+                            <p class="mb-0">O Sol é tão grande que caberiam <strong>1,3 milhões de Terras</strong>
+                                dentro dele!</p>
+                        </div>
+                        <div class="card-footer bg-transparent text-center">
+                            <small class="text-muted">#Astronomia #SistemaSolar</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Curiosidade 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="curiosidade-card card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="curiosidade-icon mb-3">
+                                <i class="bi bi-water fs-1 text-primary"></i>
+                            </div>
+                            <h3 class="h5">Água em Marte</h3>
+                            <p class="mb-0">Marte tem água congelada nos polos, suficiente para cobrir todo o planeta
+                                com uma camada de 11 metros de profundidade!</p>
+                        </div>
+                        <div class="card-footer bg-transparent text-center">
+                            <small class="text-muted">#Marte #ExploraçãoEspacial</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Curiosidade 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="curiosidade-card card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="curiosidade-icon mb-3">
+                                <i class="bi bi-clock fs-1 text-info"></i>
+                            </div>
+                            <h3 class="h5">Tempo no Espaço</h3>
+                            <p class="mb-0">Os astronautas na Estação Espacial Internacional veem o nascer do sol
+                                <strong>16 vezes por dia</strong>!
+                            </p>
+                        </div>
+                        <div class="card-footer bg-transparent text-center">
+                            <small class="text-muted">#ISS #Astronautas</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Curiosidade 4 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="curiosidade-card card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="curiosidade-icon mb-3">
+                                <i class="bi bi-stars fs-1 text-purple"></i>
+                            </div>
+                            <h3 class="h5">Estrelas Incontáveis</h3>
+                            <p class="mb-0">Existem mais estrelas no universo do que grãos de areia em todas as praias
+                                da Terra!</p>
+                        </div>
+                        <div class="card-footer bg-transparent text-center">
+                            <small class="text-muted">#Estrelas #Universo</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Curiosidade 5 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="curiosidade-card card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="curiosidade-icon mb-3">
+                                <i class="bi bi-moon fs-1 text-secondary"></i>
+                            </div>
+                            <h3 class="h5">Lua em Fuga</h3>
+                            <p class="mb-0">A Lua está se afastando da Terra a uma taxa de <strong>3,8 cm por
+                                    ano</strong>!</p>
+                        </div>
+                        <div class="card-footer bg-transparent text-center">
+                            <small class="text-muted">#Lua #Terra</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Curiosidade 6 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="curiosidade-card card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="curiosidade-icon mb-3">
+                                <i class="bi bi-thermometer-snow fs-1 text-info"></i>
+                            </div>
+                            <h3 class="h5">Frio Extremo</h3>
+                            <p class="mb-0">A temperatura no espaço pode chegar a <strong>-270°C</strong>, próximo ao
+                                zero absoluto!</p>
+                        </div>
+                        <div class="card-footer bg-transparent text-center">
+                            <small class="text-muted">#Espaço #Temperatura</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Curiosidade 7 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="curiosidade-card card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="curiosidade-icon mb-3">
+                                <i class="bi bi-lightning-charge fs-1 text-warning"></i>
+                            </div>
+                            <h3 class="h5">Júpiter Relampejante</h3>
+                            <p class="mb-0">Júpiter tem tempestades de raios <strong>1000 vezes mais poderosas</strong>
+                                que as da Terra!</p>
+                        </div>
+                        <div class="card-footer bg-transparent text-center">
+                            <small class="text-muted">#Júpiter #Planetas</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Curiosidade 8 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="curiosidade-card card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="curiosidade-icon mb-3">
+                                <i class="bi bi-infinity fs-1 text-danger"></i>
+                            </div>
+                            <h3 class="h5">Universo em Expansão</h3>
+                            <p class="mb-0">O universo está se expandindo mais rápido que a velocidade da luz!</p>
+                        </div>
+                        <div class="card-footer bg-transparent text-center">
+                            <small class="text-muted">#Cosmologia #Expansão</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Curiosidade 9 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="curiosidade-card card h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="curiosidade-icon mb-3">
+                                <i class="bi bi-gem fs-1 text-success"></i>
+                            </div>
+                            <h3 class="h5">Diamante Cósmico</h3>
+                            <p class="mb-0">Existe uma estrela anã branca na Via Láctea que é basicamente um
+                                <strong>diamante do tamanho da Terra</strong>!
+                            </p>
+                        </div>
+                        <div class="card-footer bg-transparent text-center">
+                            <small class="text-muted">#Estrelas #Curiosidades</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botão Carregar Mais -->
+            <div class="text-center mt-5">
+                <button class="btn btn-outline-primary btn-lg" id="carregarMais">
+                    <i class="bi bi-plus-circle"></i> Carregar Mais Curiosidades
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Fatos Rápidos -->
+    <section class="fatos-rapidos py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 display-5 fw-bold">Fatos Rápidos</h2>
+            <div class="row g-4">
+                <div class="col-md-3 col-6">
+                    <div class="text-center">
+                        <div class="fato-numero display-6 fw-bold text-primary">8</div>
+                        <div class="fato-texto">Planetas no Sistema Solar</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="text-center">
+                        <div class="fato-numero display-6 fw-bold text-success">300.000</div>
+                        <div class="fato-texto">km/s - Velocidade da Luz</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="text-center">
+                        <div class="fato-numero display-6 fw-bold text-warning">13.8</div>
+                        <div class="fato-texto">Bilhões de anos - Idade do Universo</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="text-center">
+                        <div class="fato-numero display-6 fw-bold text-info">100</div>
+                        <div class="fato-texto">Bilhões de Galáxias</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter py-5 bg-dark text-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <h2 class="mb-3">Quer Mais Curiosidades?</h2>
+                    <p class="mb-4">Receba curiosidades astronômicas incríveis diretamente no seu e-mail toda semana!
+                    </p>
+                    <form class="row g-2 justify-content-center">
+                        <div class="col-auto">
+                            <input type="email" class="form-control" placeholder="Seu e-mail">
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-primary">Inscrever-se</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Conexão Astronomia</h5>
+                    <p>Explorando o universo, uma curiosidade de cada vez.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Links Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-light">Início</a></li>
+                        <li><a href="materias.html" class="text-light">Matérias</a></li>
+                        <li><a href="voce_sabia.html" class="text-light">Você Sabia?</a></li>
+                        <li><a href="contato.html" class="text-light">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Conecte-se</h5>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-light"><i class="bi bi-facebook fs-4"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-twitter fs-4"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-instagram fs-4"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-youtube fs-4"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p>&copy; 2023 Conexão Astronomia. Todos os direitos reservados.</p>
+            </div>
+        </div>
     </footer>
 
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script para carregar mais curiosidades -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const carregarMaisBtn = document.getElementById('carregarMais');
+            let curiosidadesCarregadas = 9;
+
+            carregarMaisBtn.addEventListener('click', function () {
+                // Simulação de carregamento de mais curiosidades
+                this.innerHTML = '<i class="bi bi-hourglass-split"></i> Carregando...';
+                this.disabled = true;
+
+                setTimeout(() => {
+                    // Aqui você pode adicionar mais curiosidades dinamicamente
+                    alert('Mais curiosidades serão carregadas em uma versão futura!');
+                    this.innerHTML = '<i class="bi bi-plus-circle"></i> Carregar Mais Curiosidades';
+                    this.disabled = false;
+                }, 1500);
+            });
+        });
+    </script>
 </body>
 
 </html>
