@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Conexão Astronomia</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="style_adm.css">
+</head>
+
+<body>
+    <!-- Navbar (sem link para admin) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="logo.png.png" alt="Logo" width="60" class="me-2">
+                <span class="site-title">CONEXÃO ASTRONOMIA</span>
+            </a>
+
+            <!-- Link Admin (oculto para usuários normais) -->
+            <div class="admin-only">
+                <a href="admin_login.html" class="text-light me-3">
+                    <i class="bi bi-shield-lock"></i> Admin
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Seção Login -->
+    <section class="admin-login">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="login-card p-4">
+                        <div class="text-center mb-4">
+                            <img src="logo.png.png" alt="Logo" width="80" class="mb-3">
+                            <h2 class="fw-bold">Painel Admin</h2>
+                            <p class="text-muted">Acesso Restrito</p>
+                        </div>
+
+                        <form id="loginForm">
+                            <div class="mb-3">
+                                <label for="usuario" class="form-label">Usuário</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-person"></i></span>
+                                    <input type="text" class="form-control" id="usuario"
+                                        placeholder="Digite seu usuário" required>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="senha" class="form-label">Senha</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                                    <input type="password" class="form-control" id="senha"
+                                        placeholder="Digite sua senha" required>
+                                </div>
+                            </div>
+
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="lembrar">
+                                <label class="form-check-label" for="lembrar">Lembrar acesso</label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w-100 py-2">
+                                <i class="bi bi-box-arrow-in-right"></i> Entrar
+                            </button>
+
+                            <div class="alert alert-danger mt-3 d-none" id="errorAlert">
+                                Usuário ou senha incorretos!
+                            </div>
+                        </form>
+
+                        <div class="text-center mt-3">
+                            <small class="text-muted">
+                                <i class="bi bi-info-circle"></i>
+                                Acesso permitido apenas para administradores
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script de Login Simples -->
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const usuario = document.getElementById('usuario').value;
+            const senha = document.getElementById('senha').value;
+            const errorAlert = document.getElementById('errorAlert');
+
+            // Credenciais temporárias (substituir por BD depois)
+            const usuarioCorreto = 'admin';
+            const senhaCorreta = 'astro2024';
+
+            if (usuario === usuarioCorreto && senha === senhaCorreta) {
+                // Login bem-sucedido - redirecionar para painel
+                localStorage.setItem('adminLogado', 'true');
+                window.location.href = 'pag_adm.html';
+            } else {
+                // Login falhou
+                errorAlert.classList.remove('d-none');
+                setTimeout(() => {
+                    errorAlert.classList.add('d-none');
+                }, 3000);
+            }
+        });
+
+        // Verificar se já está logado
+        if (localStorage.getItem('adminLogado') === 'true') {
+            window.location.href = 'admin_painel.html';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Admin - Conexão Astronomia</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style_adm.css">
+</head>
+
+<body>
+    <!-- Verificação de Login -->
+    <script>
+        if (localStorage.getItem('adminLogado') !== 'true') {
+            window.location.href = 'admin_login.html';
+        }
+    </script>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="admin-sidebar col-md-3 col-lg-2 p-0">
+                <div class="p-3">
+                    <h4 class="text-center mb-4">
+                        <i class="bi bi-stars"></i> Admin
+                    </h4>
+
+                    <ul class="nav nav-pills flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+                                <i class="bi bi-speedometer2"></i> Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="#materias">
+                                <i class="bi bi-journal-text"></i> Gerenciar Matérias
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="#curiosidades">
+                                <i class="bi bi-lightbulb"></i> Curiosidades
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="#agenda">
+                                <i class="bi bi-calendar-event"></i> Agenda
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="#midia">
+                                <i class="bi bi-images"></i> Mídia
+                            </a>
+                        </li>
+                        <li class="nav-item mt-4">
+                            <a class="nav-link text-warning" href="#" id="logoutBtn">
+                                <i class="bi bi-box-arrow-right"></i> Sair
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="admin-main col-md-9 col-lg-10">
+                <!-- Header -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2>Painel de Controle</h2>
+                    <div class="text-muted">
+                        <i class="bi bi-person-circle"></i> Administrador
+                    </div>
+                </div>
+
+                <!-- Estatísticas -->
+                <div class="row g-3 mb-5">
+                    <div class="col-md-3">
+                        <div class="stat-card card bg-primary text-white">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h4>24</h4>
+                                        <p>Matérias</p>
+                                    </div>
+                                    <i class="bi bi-journal-text fs-1 opacity-50"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card card bg-success text-white">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h4>15</h4>
+                                        <p>Curiosidades</p>
+                                    </div>
+                                    <i class="bi bi-lightbulb fs-1 opacity-50"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card card bg-warning text-dark">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h4>8</h4>
+                                        <p>Eventos</p>
+                                    </div>
+                                    <i class="bi bi-calendar-event fs-1 opacity-50"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card card bg-info text-white">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h4>1.2K</h4>
+                                        <p>Visitas</p>
+                                    </div>
+                                    <i class="bi bi-eye fs-1 opacity-50"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gerenciar Matérias -->
+                <div class="card mb-4" id="materias">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0"><i class="bi bi-journal-text"></i> Gerenciar Matérias</h5>
+                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                            data-bs-target="#novaMateriaModal">
+                            <i class="bi bi-plus-circle"></i> Nova Matéria
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Título</th>
+                                        <th>Categoria</th>
+                                        <th>Data</th>
+                                        <th>Status</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Vida e morte das estrelas</td>
+                                        <td><span class="badge bg-primary">Astrofísica</span></td>
+                                        <td>15/03/2023</td>
+                                        <td><span class="badge bg-success">Publicado</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary">Editar</button>
+                                            <button class="btn btn-sm btn-outline-danger">Excluir</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Missão Artemis</td>
+                                        <td><span class="badge bg-success">Exploração</span></td>
+                                        <td>10/02/2023</td>
+                                        <td><span class="badge bg-success">Publicado</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary">Editar</button>
+                                            <button class="btn btn-sm btn-outline-danger">Excluir</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ações Rápidas -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0"><i class="bi bi-lightning"></i> Ações Rápidas</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-grid gap-2">
+                                    <button class="btn btn-outline-primary">Nova Curiosidade</button>
+                                    <button class="btn btn-outline-success">Agendar Evento</button>
+                                    <button class="btn btn-outline-info">Upload de Imagens</button>
+                                    <button class="btn btn-outline-warning">Backup do Site</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0"><i class="bi bi-activity"></i> Atividade Recente</h5>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <small>Matéria "Exoplanetas" publicada</small>
+                                        <br><small class="text-muted">Há 2 horas</small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <small>Nova curiosidade adicionada</small>
+                                        <br><small class="text-muted">Hoje, 09:30</small>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <small>Usuário fez login no admin</small>
+                                        <br><small class="text-muted">Hoje, 08:15</small>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Nova Matéria -->
+    <div class="modal fade" id="novaMateriaModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Nova Matéria</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Título</label>
+                            <input type="text" class="form-control" placeholder="Digite o título">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Categoria</label>
+                            <select class="form-select">
+                                <option>Astrofísica</option>
+                                <option>Exploração</option>
+                                <option>Cosmologia</option>
+                                <option>Sistema Solar</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Conteúdo</label>
+                            <textarea class="form-control" rows="6"
+                                placeholder="Digite o conteúdo da matéria"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Imagem de Capa</label>
+                            <input type="file" class="form-control">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Publicar Matéria</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script do Painel -->
+    <script>
+        // Logout
+        document.getElementById('logoutBtn').addEventListener('click', function () {
+            localStorage.removeItem('adminLogado');
+            window.location.href = 'admin_login.html';
+        });
+
+        // Simulação de funcionalidades
+        document.querySelectorAll('.btn-outline-primary, .btn-outline-success, .btn-outline-info, .btn-outline-warning').forEach(btn => {
+            btn.addEventListener('click', function () {
+                alert('Funcionalidade será implementada com o banco de dados!');
+            });
+        });
+    </script>
+</body>
+
+</html>

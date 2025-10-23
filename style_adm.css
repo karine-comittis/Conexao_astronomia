@@ -1,0 +1,66 @@
+/* === PÁGINA DE LOGIN ADMIN === */
+.admin-login {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url('universo_fundo.jpg.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.login-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.admin-only {
+    display: none;
+    /* Esconder link do admin no menu principal */
+}
+
+/* === PAINEL ADMIN === */
+.admin-sidebar {
+    background: #343a40;
+    color: white;
+    min-height: 100vh;
+    position: fixed;
+    width: 250px;
+}
+
+.admin-main {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+.stat-card {
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .admin-sidebar {
+        width: 100%;
+        position: relative;
+        min-height: auto;
+    }
+
+    .admin-main {
+        margin-left: 0;
+    }
+
+    .page-header {
+        padding-top: 80px;
+    }
+
+    .fato-numero {
+        font-size: 2.5rem;
+    }
+}
