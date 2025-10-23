@@ -4,83 +4,352 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matérias | Conexão Astronomia</title>
+    <title>Matérias - Conexão Astronomia</title>
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- CSS Personalizado -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- NAVBAR -->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top navbar-custom">
         <div class="container-fluid">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
                 <img src="logo.png.png" alt="Logo" width="60" class="me-2">
                 <span class="site-title">CONEXÃO ASTRONOMIA</span>
             </a>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link active" href="materias.html"><i
-                                class="bi bi-journal-text"></i> Matérias</a></li>
+                                class="bi bi-journal-text"></i>
+                            Matérias</a>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="voce_sabia.html"><i class="bi bi-lightbulb"></i> Você
-                            Sabia?</a></li>
+                            Sabia?</a>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="agenda.html"><i class="bi bi-calendar-check"></i>
                             Agendamentos</a></li>
+                </ul>
+
+                <!-- Barra de Pesquisa Desktop -->
+                <form class="d-none d-lg-flex ms-auto" style="width: 250px;">
+                    <input class="form-control form-control-sm" type="search" placeholder="Pesquisar...">
+                    <button class="btn btn-sm btn-outline-light ms-2" type="submit">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </form>
+
+                <!-- Ícone Pesquisa Mobile -->
+                <div class="d-lg-none ms-2">
+                    <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#searchMobile">
+                        <i class="bi bi-search fs-5"></i>
+                    </a>
+                    <div class="collapse" id="searchMobile">
+                        <input class="form-control form-control-sm mt-2" type="search" placeholder="Digite aqui...">
+                    </div>
+                </div>
+
+                <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="contato.html"><i class="bi bi-envelope"></i>
                             Contato</a></li>
                     <li class="nav-item"><a class="nav-link" href="ajuda.html"><i class="bi bi-question-circle"></i>
-                            Ajuda</a></li>
+                            Ajuda</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section class="container py-5 mt-5">
-        <h1 class="display-4 fw-bold text-center mb-5">Matérias Recentes</h1>
+    <!-- Header da Página -->
+    <section class="page-header py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="display-4 fw-bold text-center">Nossas Matérias</h1>
+                    <p class="lead text-center mb-4">Explore nosso conteúdo completo sobre astronomia e astrofísica</p>
 
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card materia-card">
-                    <img src="buraco_negro.jpg" class="card-img-top" alt="Buraco Negro">
-                    <div class="card-body">
-                        <span class="badge bg-primary mb-2">Astrofísica</span>
-                        <h3>Buracos Negros e o Espaço-Tempo</h3>
-                        <p>Explore o fenômeno mais misterioso do universo e como ele influencia o espaço ao seu redor.
-                        </p>
+                    <!-- Filtros por Categoria -->
+                    <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
+                        <button class="btn btn-outline-primary active" data-filter="all">Todas</button>
+                        <button class="btn btn-outline-primary" data-filter="astrofisica">Astrofísica</button>
+                        <button class="btn btn-outline-primary" data-filter="exploracao">Exploração</button>
+                        <button class="btn btn-outline-primary" data-filter="cosmologia">Cosmologia</button>
+                        <button class="btn btn-outline-primary" data-filter="sistema-solar">Sistema Solar</button>
+                        <button class="btn btn-outline-primary" data-filter="telescopios">Telescópios</button>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card materia-card">
-                    <img src="lua.jpg" class="card-img-top" alt="Lua">
-                    <div class="card-body">
-                        <span class="badge bg-success mb-2">Exploração</span>
-                        <h3>Missões Lunares do Futuro</h3>
-                        <p>Conheça os novos planos de exploração da Lua e a preparação para Marte.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card materia-card">
-                    <img src="galaxia.jpg" class="card-img-top" alt="Galáxia">
-                    <div class="card-body">
-                        <span class="badge bg-warning text-dark mb-2">Cosmologia</span>
-                        <h3>A Expansão do Universo</h3>
-                        <p>Descubra como o universo está se expandindo e o que isso significa para o futuro.</p>
+
+                    <!-- Barra de Pesquisa Interna -->
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="input-group mb-4">
+                                <input type="text" class="form-control" placeholder="Buscar matérias..."
+                                    id="searchInput">
+                                <button class="btn btn-primary" type="button" id="searchButton">
+                                    <i class="bi bi-search"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="text-center py-4 bg-dark text-light mt-5">
-        <p class="mb-0">&copy; 2025 Conexão Astronomia — Todos os direitos reservados.</p>
+    <!-- Lista de Matérias -->
+    <section class="materias-list py-5">
+        <div class="container">
+            <div class="row g-4" id="materiasContainer">
+                <!-- Matéria 1 -->
+                <div class="col-md-6 col-lg-4 materia-item" data-category="astrofisica">
+                    <div class="card materia-card h-100">
+                        <img src="buraco_negro.jpg" class="card-img-top" alt="Buracos Negros">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">Astrofísica</span>
+                            <h3 class="h4">Vida e morte das estrelas</h3>
+                            <p>Desde os primórdios da humanidade, o céu noturno tem sido fonte de mistério e inspiração.
+                            </p>
+                            <div class="materia-meta d-flex justify-content-between text-muted small">
+                                <span><i class="bi bi-calendar"></i> 15 Mar, 2023</span>
+                                <span><i class="bi bi-clock"></i> 8 min</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <a class="btn btn-sm btn-outline-primary">Ler Matéria</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Matéria 2 -->
+                <div class="col-md-6 col-lg-4 materia-item" data-category="exploracao">
+                    <div class="card materia-card h-100">
+                        <img src="artemis.webp" class="card-img-top" alt="Missão Artemis">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">Exploração</span>
+                            <h3 class="h4">Missão Artemis</h3>
+                            <p>O retorno da humanidade à Lua e os preparativos para Marte.</p>
+                            <div class="materia-meta d-flex justify-content-between text-muted small">
+                                <span><i class="bi bi-calendar"></i> 10 Fev, 2023</span>
+                                <span><i class="bi bi-clock"></i> 6 min</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <a class="btn btn-sm btn-outline-primary">Ler Matéria</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Matéria 3 -->
+                <div class="col-md-6 col-lg-4 materia-item" data-category="cosmologia">
+                    <div class="card materia-card h-100">
+                        <img src="expansao.avif" class="card-img-top" alt="Expansão do Universo">
+                        <div class="card-body">
+                            <span class="badge bg-warning text-dark mb-2">Cosmologia</span>
+                            <h3 class="h4">A Expansão do Universo</h3>
+                            <p>Como a energia escura está acelerando a expansão cósmica.</p>
+                            <div class="materia-meta d-flex justify-content-between text-muted small">
+                                <span><i class="bi bi-calendar"></i> 28 Jan, 2023</span>
+                                <span><i class="bi bi-clock"></i> 10 min</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <a class="btn btn-sm btn-outline-primary">Ler Matéria</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Matéria 4 -->
+                <div class="col-md-6 col-lg-4 materia-item" data-category="sistema-solar">
+                    <div class="card materia-card h-100">
+                        <img src="jupiter.jpg" class="card-img-top" alt="Júpiter e suas luas">
+                        <div class="card-body">
+                            <span class="badge bg-info mb-2">Sistema Solar</span>
+                            <h3 class="h4">Júpiter: O Gigante Gasoso</h3>
+                            <p>Explorando as características fascinantes do maior planeta do nosso sistema solar.</p>
+                            <div class="materia-meta d-flex justify-content-between text-muted small">
+                                <span><i class="bi bi-calendar"></i> 5 Dez, 2022</span>
+                                <span><i class="bi bi-clock"></i> 7 min</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <a class="btn btn-sm btn-outline-primary">Ler Matéria</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Matéria 5 -->
+                <div class="col-md-6 col-lg-4 materia-item" data-category="telescopios">
+                    <div class="card materia-card h-100">
+                        <img src="webb.jpg" class="card-img-top" alt="Telescópio James Webb">
+                        <div class="card-body">
+                            <span class="badge bg-secondary mb-2">Telescópios</span>
+                            <h3 class="h4">James Webb: Uma Nova Era</h3>
+                            <p>Como o telescópio espacial James Webb está revolucionando nossa visão do cosmos.</p>
+                            <div class="materia-meta d-flex justify-content-between text-muted small">
+                                <span><i class="bi bi-calendar"></i> 20 Nov, 2022</span>
+                                <span><i class="bi bi-clock"></i> 12 min</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <a class="btn btn-sm btn-outline-primary">Ler Matéria</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Matéria 6 -->
+                <div class="col-md-6 col-lg-4 materia-item" data-category="astrofisica">
+                    <div class="card materia-card h-100">
+                        <img src="exoplanetas.jpg" class="card-img-top" alt="Exoplanetas">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">Astrofísica</span>
+                            <h3 class="h4">Em Busca de Exoplanetas Habitáveis</h3>
+                            <p>Os métodos de detecção e as características dos planetas fora do nosso sistema solar.</p>
+                            <div class="materia-meta d-flex justify-content-between text-muted small">
+                                <span><i class="bi bi-calendar"></i> 8 Out, 2022</span>
+                                <span><i class="bi bi-clock"></i> 9 min</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <a class="btn btn-sm btn-outline-primary">Ler Matéria</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paginação -->
+            <nav aria-label="Navegação de páginas" class="mt-5">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Próxima</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter py-5 bg-dark text-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <h2 class="mb-3">Fique Por Dentro das Novidades</h2>
+                    <p class="mb-4">Inscreva-se em nossa newsletter para receber as últimas matérias e descobertas
+                        astronômicas diretamente no seu e-mail.</p>
+                    <form class="row g-2 justify-content-center">
+                        <div class="col-auto">
+                            <input type="email" class="form-control" placeholder="Seu e-mail">
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-primary">Inscrever-se</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Conexão Astronomia</h5>
+                    <p>Explorando o universo, uma matéria de cada vez.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Links Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-light">Início</a></li>
+                        <li><a href="materias.html" class="text-light">Matérias</a></li>
+                        <li><a href="contato.html" class="text-light">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Conecte-se</h5>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-light"><i class="bi bi-facebook fs-4"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-twitter fs-4"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-instagram fs-4"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-youtube fs-4"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p>&copy; 2023 Conexão Astronomia. Todos os direitos reservados.</p>
+            </div>
+        </div>
     </footer>
 
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script para filtros e busca -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Filtros por categoria
+            const filterButtons = document.querySelectorAll('[data-filter]');
+            const materiaItems = document.querySelectorAll('.materia-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    // Remove a classe active de todos os botões
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Adiciona a classe active ao botão clicado
+                    this.classList.add('active');
+
+                    const filter = this.getAttribute('data-filter');
+
+                    materiaItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Funcionalidade de busca
+            const searchInput = document.getElementById('searchInput');
+            const searchButton = document.getElementById('searchButton');
+
+            function performSearch() {
+                const searchTerm = searchInput.value.toLowerCase();
+
+                materiaItems.forEach(item => {
+                    const title = item.querySelector('h3').textContent.toLowerCase();
+                    const description = item.querySelector('p').textContent.toLowerCase();
+
+                    if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            }
+
+            searchButton.addEventListener('click', performSearch);
+            searchInput.addEventListener('keyup', function (event) {
+                if (event.key === 'Enter') {
+                    performSearch();
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
